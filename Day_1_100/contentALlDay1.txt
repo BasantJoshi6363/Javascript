@@ -1,0 +1,210 @@
+//definition of Variable
+// --> variable are just container to store the data in any programming language
+
+// to Declare Variable we can use (let,var,const)
+
+// (var) is old style to define variable in js but has some issues in scope
+let name = "Basant"
+
+//(let) is newly introduced variable in recent es6 update, it is basically block scope.
+let myName = "Basant"
+
+//(const) is also newly introduced , it is also block scope but we cannot reassign it.
+const mineName = "Basant"
+console.log(mineName);
+
+
+
+// Arithmetic Operators
+//arithmetic operators are those operator which are involve in mathematical task
+// = - * % / are the arithmetic operator
+
+let a = 12,
+  b = 13;
+// console.log("c:", a+b)
+
+// Assignment Operators
+//in js assignment operator are those operators which help to assign a data or value to operator
+// = is the assignment operator
+let name = "basant";
+
+// Comparison Operators
+// comparison operator are those operator which help to compare two or more value in programming languages.
+
+// < > <= >= ! are some comparison operator
+// it throws either true or false in output
+//  console.log(name!=b)
+//  console.log(name>b)
+
+// Logical Operators
+//logical operator are those operators which are basically used in logical operation
+// && -> logical and
+// || -> logical or
+// ! ->  logical not
+// a && b
+// a || b;
+// a ^ b;
+
+// Ternary Operators
+
+let nameA = "Ayush"
+let NameB = "Ayusha"
+let compare2 = (nameA.length > NameB.length) ?  console.log(`${nameA.length}${nameA}`) : console.log(`${NameB.length} ${NameB}`);
+
+
+//if else
+
+//basically control structure is construct that alter the flow of program execution.
+// basically if else switch for loop while and do while loop are the control structure
+
+
+//conditional are the block of the code which help to execute our program in different condition
+
+// if(true) //do something else do something next
+
+// if(false) console.log("hello world i am true.") 
+// else console.log("hello world i am false.")
+
+// only else will execute when if condition is false
+let a = 10, b =10
+if(a>b){console.log(a)} else if (a==b){console.log("they are equal")} else{console.log(b)}
+
+/*
+ calculateGrade that takes a score as input and returns the corresponding letter grade based on the following grading scale:
+90 or above: 'A'
+80-89: 'B'
+70-79: 'C'
+60-69: 'D'
+Below 60: 'F'
+
+*/
+let totalPer = 87 //this is the value from user
+
+if(totalPer >=90){
+    console.log("A")
+}
+else if(totalPer>=80){
+    console.log("B")
+}
+else if(totalPer>=70){
+    console.log("C")
+}
+else if(totalPer>=80){
+    console.log("D")
+}
+else {
+    console.log("F")
+}
+
+
+//loops -> iteration 
+//loop is the sequence of repetitive which will not finish until condition doesn't match.
+
+// there are several loops in programming language but we mostly use for,while, do while and for each loop in js 
+
+// syntax for for loop
+
+//for(initialization condition increment/decrement){code}
+
+
+// basic program example of for loop 
+let  num =10;
+for (let i = 1; i <=num; i++) {
+    const element = i;
+    // console.log(element);
+    
+}
+//working mechanism of for loop 
+// while starting the loop at first we initialize value and give condition then loop enter in the block code and check either it is iterating or not 
+
+//program to print the multiplication of program to 5 
+let multiplyValue = 5
+for (let i = 1; i<=multiplyValue; i++) {
+    for (let j = 1; j <=10; j++) {
+    //    console.log(`${i} *${j} = ${i*j}`);
+    } 
+}
+
+
+//function is a block of code which we can call anywhere to reduce the code 
+
+function myName(){
+    let name = "Basant"
+    return name
+  }
+  
+  // console.log(myName())
+  let fullName = "my name is " +myName() + " joshi"
+  // console.log(fullName)
+  
+  
+  //function have two important element they are arguments and parameters
+  //parameters are those values which are initialized while declaring function under the parenthesis of function
+  
+  function hisName(par){
+      return par
+  }
+  //above par is paramter of the function 
+  
+  
+  //argument are those value which we pass to the function while calling the function
+  // console.log(hisName("hello Basant")) // -> this is the example of function
+  
+  //in the js there are many types of function in js but we must use arrow function and normal function 
+  
+  //example of normal function 
+  // function myFun (){}
+  
+  
+  //example of arrow function
+  // let myFun = ()=>{}
+  
+  // exercise for arrow function 
+  
+  
+  // Arrow Function Question:
+  
+  // Write an arrow function called doubleNumbers that takes an array of numbers as input and returns a new array where each number is doubled.
+  let arr = [1,2,3,4,5,6]
+  
+  let doubleArrayElement = arr.map((value)=>{
+      return value*2
+  })
+  
+  // console.log(doubleArrayElement)
+  
+  // Create a traditional function called calculateFactorial that takes a positive integer n as input and returns the factorial of that number.
+  
+  let factorial = 1
+  function factorialOfNum(value){
+      for(let i=1; i<=value; i++){
+          factorial = factorial *i
+      }
+      return factorial
+      
+  
+  }
+  // console.log(factorialOfNum(5))
+  
+  // Create a function called getTicketCategory that takes two parameters: age (a number) and isStudent (a boolean indicating whether the person is a student or not). that distribute category
+  
+  
+  function checkCategories(per){
+      if(per>=10){
+          console.log("Child")
+      }
+      else if(person >=15){
+          console.log("Student")
+      }
+      else if(per >=20){
+          console.log("Teen")
+      }
+      else{
+          console.log("Adult")
+      }
+      return per
+  }
+  
+  // console.log(checkCategories(10))
+
+
