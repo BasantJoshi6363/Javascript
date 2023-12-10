@@ -67,10 +67,20 @@ let maximumNumber = (value)=>{
 }
 // console.log(maximumNumber([1,2,3,4,5,6,78]));
 
+//make first word capital 
+// console.log(name);
+// console.log(makeFirstWordCapital([]))
+let name1 = ["b","a","s","a","n","t"]
+let makeFirstWordCapital = name1.map((value,i)=>{
+    if(i===0){
+        return value.toUpperCase()
+    }
+    else{
+        return value.toLowerCase()
+    }
+})
 
-//reverse array 
+   console.log(makeFirstWordCapital) 
 
-let reverseArray = (num)=>{
-    return num
-}
-console.log(reverseArray([1,2,3,4,5,6,7]));
+//array function
+//map reduce filter reverse sort
