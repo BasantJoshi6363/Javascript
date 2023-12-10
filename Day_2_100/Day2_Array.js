@@ -80,7 +80,27 @@ let makeFirstWordCapital = name1.map((value,i)=>{
     }
 })
 
-   console.log(makeFirstWordCapital) 
+//    console.log(makeFirstWordCapital) 
 
-//array function
-//map reduce filter reverse sort
+//arrays methods 
+let myarr = [1,2,3]
+
+// console.log(myarr.includes(2))
+
+// console.log(myarr.indexOf(2))
+
+//spread operator 
+let arr1 = ["rajesh","basant","prakash"]
+let arr2 = ["shankar","mahesh","ranco"]
+// console.log(...arr2, ...arr1);
+
+// slice and splice
+
+let arr5 = ["rajesh","basant","prakash","ayush"]
+// console.log(arr5.slice(0,2))
+
+
+let anotherArr = ["hello", "Sathi", "haru", "ke", "cha"]
+anotherArr.splice(2,0,["Basant", "joshi"])
+
+// console.log(anotherArr);
