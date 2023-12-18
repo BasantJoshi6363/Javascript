@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        .bulb{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            border: 2px solid #dadada;
+
+        }
+        #btn{
+            margin-top: 30px;
+            width: 200px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!--selecting the html element
+        changing html 
+        styling the html element 
+        event listener 
+    -->
+    <h1>DOM</h1>
+    <p>Document object model</p>
+    <h2 class="dom">
+        this is me dom
+    </h2>
+    <h4 id="domId">
+        this is me dom id  <span>Basant Joshi</span>
+    </h4>
+    <div class="bulb"></div>
+    <button id="btn">on</button>
+
+    <h1 class="head1">hello sir how are you</h1>
+    <h1 class="head1">hello sir how are you</h1>
+    <h1 class="head1">hello sir how are you</h1>
+
+
+    <script>
+        //selecting html using query selector 
+    //   let headingTag =   document.querySelector("h1")
+      //to select the html element we must writes property name 
+
+      //how to select class and id 
+      let selectDiv = document.querySelector(".dom")
+    //   console.log(selectDiv);
+
+    //   for id 
+    let selectId = document.querySelector("#domId")
+    // console.log(selectId)
+    
+
+      
+    //   console.log(headingTag);
+
+    // changing the html content
+//    console.log(selectId.innerHTML)
+    // selectId.innerText = "iam inner html by id"
+    // selectId.textContent = "hello iam inner content by basant joshi"
+    
+    // difference between innerHtml and inner text is 
+    // inner html gives all text and html tag given in tag
+    // but innertext gives only text present in the selected tag
+
+
+    //add styling 
+        // selectId.style.backgroundColor="red"
+        // selectId.style.padding="20px"
+        // selectId.style.color="white"
+        // selectId.style.fontSize="40px"
+
+
+        //event listener
+        // selectId.addEventListener("click",()=>{
+        //     selectId.style.backgroundColor = "green"
+        //     selectId.style.padding="20px"
+        //     selectId.style.color="white"
+        //     selectId.style.fontSize="40px"
+        // })
+
+
+        //make a bulb program 
+        let btn = document.querySelector("#btn")
+        let bulb=  document.querySelector(".bulb")
+        let sign =0
+       btn.addEventListener("click",()=>{
+        if(sign===0){
+            bulb.style.backgroundColor= "yellow"
+            btn.innerHTML = "off"
+            sign = 1
+        }
+        else{
+            bulb.style.backgroundColor= "white"
+            btn.innerHTML = "on"
+
+            sign =0
+
+        }
+       })
+
+       // how to select multiple same tag
+    //    if we use queryselector it selects only one tag but if we use query selector all it will select all elements
+     
+
+
+    </script>
+
+</body>
+</html>
