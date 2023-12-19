@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Request</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+            *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1487147264018-f937fba0c817?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    margin-bottom: 40px;
+    height: 30vw;
+    width: 30vw;
+    background-color: #979797;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.image-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 11vw;
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+#btn{
+    color: rebeccapurple;
+    width: 150px;
+   margin: 0 auto;
+   border: none;
+   border-radius:5px;
+   cursor: pointer;
+   padding: 5px;
+   font-size: 20px;
+}
+.btn-div{
+    display: flex;
+    gap: 10px;
+}
+#btn2{
+    color: rebeccapurple;
+    width: 150px;
+   margin: 0 auto;
+   border: none;
+   border-radius:5px;
+   cursor: pointer;
+   padding: 5px;
+   font-size: 20px;
+}
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="card">
+            <div class="image-div">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <h1>Stranger</h1>
+                <div class="btn-div">
+                    <button id="btn">Add Friend</button>
+                    <button id="btn2">Remove Friends</button>
+                </div>
+            </div>
+            </div>
+    </div>
+    <script>
+       let btn =  document.querySelector("#btn")
+       let btn2 =  document.querySelector("#btn2")
+       let stat = document.querySelector('h1')
+       let sign = 1
+       btn2.style.display = "none"
+
+       btn.addEventListener("click",()=>{
+           
+           if(sign===1){
+            btn2.style.display = "block"
+            btn.textContent = "Friends"
+            sign = 0
+            stat.innerHTML = "Friends"
+
+            
+        }
+        else{
+            btn.textContent = "Add Friend"
+            btn2.style.display = "none"
+            stat.innerHTML = "Stranger"
+            sign = 1
+            
+        }
+        
+       })
+
+       btn2.addEventListener("click",()=>{
+        stat.innerHTML = "Stranger"
+        btn.textContent = "Add Friend"
+       })
+   
+    </script>
+    
+</body>
+</html>
