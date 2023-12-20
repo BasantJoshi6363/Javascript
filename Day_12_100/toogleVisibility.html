@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hide and show photo</title>
+    <style>
+         *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+    button{
+        height: 30px;
+        width: 160px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img id="img" src="https://images.unsplash.com/photo-1695653422676-d9dd88400e21?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8" alt="">
+        <div class="buttons">
+            <button id="hide">hide</button>
+            <button id="show">show</button>
+        </div>
+    </div>
+    <script>
+        let img= document.querySelector("#img")
+        let hide= document.querySelector("#hide")
+        let show= document.querySelector("#show")
+
+        hide.addEventListener('click',()=>{
+            img.style.display = "none"
+        })
+        show.addEventListener('click',()=>{
+            img.style.display = "block"
+        })
+    </script>
+</body>
+</html>
