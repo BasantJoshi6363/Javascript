@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            display: flex;
+            padding: 20px;
+            height: 350px;
+            width: 350px;
+            border: 1px solid grey;
+            border-radius: 5px;
+            align-items: center;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <h1>Random Number Guessing Game</h1>
+            <p>Guess a number between 1 and 10:</p>
+            <input type="text" id="guessInput">
+            <button id="btn" onclick="checkGuess()">Guess</button>
+            <p id="message"></p>
+          
+        </div>
+        
+    </div>
+    <script>
+       let input =  document.querySelector("#guessInput")
+       let btn = document.querySelector("#btn")
+       let par =  document.createElement('p')
+      let playGame = true
+        if(playGame){
+            btn.addEventListener('click',(e)=>{
+                e.preventDefault()
+                const guess = parseInt(input.value)
+                console.log(guess)
+                validate()
+
+
+            })
+        }
+        function validate(){
+            if(input.value===undefined || input.value===null || input.value===""){
+               alert("enter number only") 
+            }
+            else if (input.value<0){
+               alert("input value greater than 0")     
+            }
+            else if(input.value>10){
+                alert("must be less than 10")
+            }
+            else{
+                runProgram()
+            }
+              }
+         let randomNumber = parseInt(Math.random()*10+1)
+        
+        
+        function runProgram(){
+            if(input.value==randomNumber){
+                alert("you guess correct.")
+            }
+            else{
+                alert("wrong guess")
+            }
+        }
+
+       
+    </script>
+</body>
+</html>
