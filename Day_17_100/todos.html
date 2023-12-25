@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card{
+            padding: 20px;
+            text-align: center;
+            color: white;
+            height: 450px;
+            width: 450px;
+            background-color: rgb(75, 65, 65);
+            border-radius: 10px;
+        }
+        h1{
+            padding-bottom: 50px;
+        }
+        .addtask{
+            display: flex;
+        }
+        input{
+            padding: 10px;
+            width: 300px;
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        button{
+            height: 40px;
+            width: 100px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .list{
+            margin-top: 25px;
+            background-color: grey;
+            height: 45px;
+            border-radius: 5px;
+            align-items: center;
+            display: flex;  
+            justify-content: space-between;
+            padding: 20px;
+            display: none;
+        }
+        .list i{
+            font-size: 25px;
+            cursor: pointer;
+            
+        }
+        .list-right {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            
+        }
+        .lists{
+            list-style-type: none;
+            margin-top: 25px;
+            background-color: grey;
+            padding: 7px 20px;
+            overflow: hidden;
+            font-size: 30px;
+        }
+        .del,.edit{
+            position: relative;
+            left: 50px;
+            margin:10px;
+            font-size: 25px;
+            cursor: pointer;
+           
+            
+        }
+        del:hover{
+            opacity: -6px;
+            transition: .3s;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="card">
+            <h1>To Do App</h1>
+            <div class="addTask">
+                <input type="text" placeholder="enter your task here.">
+                <button>Add Task</button>
+            </div>
+            <div class="list">
+                <div class="list-left">
+                    <ul></ul>
+                </div>
+                <div class="list-right">
+                    <i class="ri-edit-box-fill"></i>
+                    <i class="ri-delete-bin-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let input = document.querySelector("input")
+        let card = document.querySelector(".card")
+        let btn = document.querySelector("button")
+        let dlt = document.querySelector(".dlt")
+        let addTask = true
+            if(addTask){
+                addElement()
+            }
+       
+        function addElement(){
+            
+            btn.addEventListener("click",()=>{
+                var list = document.createElement("li")
+                list.innerHTML = input.value
+                input.value= ""
+                card.appendChild(list)
+                list.classList.add("lists")
+              
+               function editElement(){
+                    var spanElement = document.createElement('span');
+                    
+                    spanElement.innerHTML = `<i class="ri-edit-box-fill"></i>`;
+                    list.appendChild(spanElement)
+
+                    spanElement.classList.add("edit")
+
+                }
+
+                deleteElement()
+                editElement()
+                function deleteElement(){
+                    let dlt = document.createElement("span")
+                    dlt.addEventListener("click",()=>{
+                        card.removeChild(list);
+                    })
+                    
+                    dlt.innerHTML = `<i class="ri-delete-bin-line"></i>`
+                    dlt.classList.add("del")
+                    list.appendChild(dlt)
+                     }
+             
+            })
+            
+
+
+        }
+        
+
+
+
+
+    </script>
+</body>
+</html>
