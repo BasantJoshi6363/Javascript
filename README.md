@@ -1,2 +1,1 @@
-# 100DaysCodeChallenge
-100 day challenge of mern stack with js html css react express mongodb
+this repository is made to store my notes and practice project related to javascript.
